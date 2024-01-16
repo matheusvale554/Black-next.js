@@ -7,8 +7,9 @@ interface Apiresponse {
     timestamp: Date
 }
 
-export const getStaticProps : GetServerSideProps =async () => {
-    const staticData = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/api/hello`)
+export const getStaticProps : GetServerSideProps = async () => {
+    const staticData = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/api/hello`).then(res => res.json())
+
     return {
         props:{
             staticData
