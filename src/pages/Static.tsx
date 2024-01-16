@@ -30,7 +30,7 @@ const Static: NextPage = (props: {
     }, [])
 
     const fetchDate = async () => {
-        const data = await fetch("/api/hello").then(res => res.json())
+        const data = await fetch("/api/hello2").then(res => res.json())
 
         setClientSideData(data)
     }
