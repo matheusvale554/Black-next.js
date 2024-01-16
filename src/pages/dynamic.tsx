@@ -18,7 +18,7 @@ return {
 }
 
 const Dynamic:NextPage = (props : {
-    children?: ReactNode
+    Children?: ReactNode
     serverSideData?: Apiresponse
 }) =>{
 
