@@ -30,8 +30,19 @@ export const getStaticProps: GetStaticProps = async () => {
       }, [])
     
       const fetchData = async () => {
-        const data = await fetch(`/api/hello`).then(res => res.json())
-        setClientSideData(data)
+        try {
+          const apiUrl = `${process.env.NEXT_PUBLIC_APIURL}/api/hello`;
+          const response = await fetch(apiUrl);
+      
+          if (!response.ok) {
+            throw new Error(`Failed to fetch data. Status: ${response.status}`);
+          }
+      
+          const data = await response.json();
+          setClientSideData(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
       }
     
   return (
