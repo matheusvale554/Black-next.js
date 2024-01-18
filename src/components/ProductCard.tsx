@@ -14,9 +14,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { id, name, imageUrl, price } = product
 
   return (
-    <><Card>
-          <Link href={`/products/${id}`}>
-              <Image className="card-img-top" src={imageUrl} alt="Product" height={500} width={600} />
+    <>
+    <Card>
+          <Link className="text-center" href={`/products/${id}`}>
+              <Image className="" src={imageUrl} alt="Product" priority width={200} height={200}/>
           </Link>
 
           <CardBody>
@@ -43,7 +44,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </Button>
 
           </CardBody>
-      </Card><SuccessToast toastIsOpen={toastIsOpen} setToastIsOpen={setToastIsOpen} /></>
+      </Card><SuccessToast toastIsOpen={toastIsOpen} setToastIsOpen={setToastIsOpen} />
+      </>
   )
 }
 
