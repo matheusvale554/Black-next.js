@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
 import { Button, Container } from "reactstrap"
-import Header from "../components/Header"
+import Header from "../src/components/Header"
 
 const Home: NextPage = () => {
   return (
